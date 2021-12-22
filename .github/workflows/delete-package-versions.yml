@@ -14,8 +14,8 @@ jobs:
         uses: actions/delete-package-versions@21a6c99c5d5ac7fd1ed0e39b84d5e2767c2f42dc
         with: 
             owner: NamrataJha
-            repo: $${{ matrix.node }}
-            package-name: $${{ matrix.node }}
+            repo: ${{ matrix.node }}
+            package-name: ${{ matrix.node }}
             min-versions-to-keep: 50
 
  
