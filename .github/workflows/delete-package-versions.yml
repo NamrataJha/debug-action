@@ -5,14 +5,17 @@ on:
 jobs:
   delete-old-packages:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['debug-action','debug-action','debug-action']
     
     steps:
       - name: Delete package
         uses: actions/delete-package-versions@21a6c99c5d5ac7fd1ed0e39b84d5e2767c2f42dc
         with: 
             owner: NamrataJha
-            repo: debug-action
-            package-name: debug-action
+            repo: $${{ matrix.node }}
+            package-name: $${{ matrix.node }}
             min-versions-to-keep: 50
 
  
