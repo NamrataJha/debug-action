@@ -9,11 +9,11 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix: 
-        node: ["debug-action","debug-action","debug-action","debug-action","debug-action"]
+        node: ["debug-action"]
     
     steps:
       - name: Delete package
-        uses: actions/delete-package-versions@f556b07dce45d90d66380d9848d242790157389e
+        uses: actions/delete-package-versions@v2
         with: 
             owner: NamrataJha
             repo: 'debug-action'
