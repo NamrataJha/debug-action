@@ -9,16 +9,17 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix: 
-        node: ["debug-action"]
+        node: ["debug-action", "npm-action-test", "test-repo", "sample"]
     
     steps:
       - name: Delete package
         uses: actions/delete-package-versions@v2
         with: 
             owner: NamrataJha
-            repo: 'debug-action'
+            repo: ${{ matrix.node }}
             package-name: ${{ matrix.node }}
             min-versions-to-keep: 50
+            token: ${{ secrets.PAT }}
 
 
  
